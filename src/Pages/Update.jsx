@@ -68,7 +68,7 @@ const Update = () => {
             return navigate(`/Update/${userId}`);
         }
 
-        axios.patch(`http://localhost:8080/product/UpdateProducts/${userId}`, {
+        axios.patch(`https://crud-g2k4.onrender.com/product/UpdateProducts/${userId}`, {
             file: image,
             email,
             password,

@@ -18,7 +18,7 @@ const Product = () => {
     }
     const deleteData = (id) => {
         console.log(id)
-        axios.delete(`http://localhost:8080/product/DeleteProducts/${id}`)
+        axios.delete(`https://crud-g2k4.onrender.com/product/DeleteProducts/${id}`)
             .then((res) => (
                 console.log("Product deleted successfully !"),
                 getData()
@@ -34,11 +34,11 @@ const Product = () => {
                 <h1 className="text-3xl font-bold text-gray-800 mb-4">Product Page</h1>
                 <p className="text-lg text-gray-600">This is the product page.</p>
             </div>
-            <div className='grid grid-cols-3'>
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4">
                 {data.map(({ image, email, password, gender, age, date, _id }) => (
                     <div
                         key={_id}
-                        className="p-6 bg-white shadow-lg rounded-lg border border-gray-300 hover:shadow-xl transition-shadow m-5 max-w-sm w-full mx-auto"
+                        className="p-6 bg-white shadow-lg rounded-lg border border-gray-300 hover:shadow-xl transition-shadow m-auto max-w-xs"
                     >
                         <div className="flex flex-col items-center">
                             <img
@@ -67,7 +67,7 @@ const Product = () => {
                                         show: true,
                                         title: 'Conform To Delete',
                                         text: 'Delete 👍',
-                                    })
+                                    });
                                 }}
                                 className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2"
                             >
@@ -83,10 +83,10 @@ const Product = () => {
                             </NavLink>
                         </div>
                     </div>
-                ))} 
-
+                ))}
             </div>
         </div>
+
     )
 }
 
