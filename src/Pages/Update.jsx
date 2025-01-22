@@ -100,7 +100,7 @@ const Update = () => {
                     <div className="mb-4">
                         <div className="flex items-center justify-center space-x-4">
                             <img
-                                src={image instanceof File ? URL.createObjectURL(image) : `http://localhost:8080/${image}`}
+                                src={image instanceof File ? URL.createObjectURL(image) : `https://crud-g2k4.onrender.com/${image}`}
                                 alt={email}
                                 className="w-24 h-24 rounded-full object-cover border-2 border-gray-300 shadow-sm"
                             />
