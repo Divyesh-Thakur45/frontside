@@ -10,12 +10,15 @@ const Product = () => {
     const getData = () => {
         axios.get("https://crud-g2k4.onrender.com/product/getAllProducts/1", {
             withCredentials: true,
+            headers: {
+                'Content-Type': 'application/json', // Specify content type
+            },
         }).then((res) => setData(res.data.message))
             .catch((err) => console.log(err))
     }
     const deleteData = (id) => {
         console.log(id)
-        axios.delete(`https://crud-g2k4.onrender.com/product/DeleteProducts/${id}`)
+        axios.delete(`http://localhost:8080/product/DeleteProducts/${id}`)
             .then((res) => (
                 console.log("Product deleted successfully !"),
                 getData()
@@ -80,7 +83,7 @@ const Product = () => {
                             </NavLink>
                         </div>
                     </div>
-                ))}
+                ))} 
 
             </div>
         </div>
