@@ -1,11 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 const Signin = () => {
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [Emailerror, setEmailerror] = useState('');
@@ -25,8 +25,8 @@ const Signin = () => {
         }, {
             withCredentials: true,
         }).then((res) => (
-            toast.success(res.data.message)
-            // navigate('/Product')
+            toast.success(res.data.message),
+            navigate('/Product')
         ))
             .catch((err) => toast.warn(err.response.data))
     }
